@@ -1,0 +1,65 @@
+/*
+  Icon Font: fontcustom
+*/
+
+@font-face {
+  font-family: "fontcustom";
+  src: url("./fontcustom_273357ad6f87ea8fd7de6ac6830918d5.eot");
+  src: url("./fontcustom_273357ad6f87ea8fd7de6ac6830918d5.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom_273357ad6f87ea8fd7de6ac6830918d5.woff") format("woff"),
+       url("./fontcustom_273357ad6f87ea8fd7de6ac6830918d5.ttf") format("truetype"),
+       url("./fontcustom_273357ad6f87ea8fd7de6ac6830918d5.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "fontcustom";
+    src: url("./fontcustom_273357ad6f87ea8fd7de6ac6830918d5.svg#fontcustom") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow483:before,
+.icon-back28:before,
+.icon-browsers5:before,
+.icon-camera47:before,
+.icon-cloud393:before,
+.icon-facebook29:before,
+.icon-gears:before,
+.icon-github8:before,
+.icon-locked59:before,
+.icon-right127:before,
+.icon-social71--1-:before,
+.icon-star:before,
+.icon-youtube7:before {
+  display: inline-block;
+  font-family: "fontcustom";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-arrow483:before { content: "\f100"; }
+.icon-back28:before { content: "\f101"; }
+.icon-browsers5:before { content: "\f10c"; }
+.icon-camera47:before { content: "\f109"; }
+.icon-cloud393:before { content: "\f108"; }
+.icon-facebook29:before { content: "\f102"; }
+.icon-gears:before { content: "\f103"; }
+.icon-github8:before { content: "\f10a"; }
+.icon-locked59:before { content: "\f10b"; }
+.icon-right127:before { content: "\f104"; }
+.icon-social71--1-:before { content: "\f105"; }
+.icon-star:before { content: "\f106"; }
+.icon-youtube7:before { content: "\f107"; }

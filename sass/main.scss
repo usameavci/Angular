@@ -1,0 +1,33 @@
+//frameworks & tools
+@import url('../bootstrap/bootstrap.css');
+@import url('../fontcustom/fontcustom.css');
+
+//styles
+@import "compass/css3";
+@import "styles/colour";
+@import "styles/preloader";
+@import "styles/fonts";
+@import "styles/buttons";
+@import "styles/input";
+@import "styles/mixin";
+@import "styles/navigation";
+@import "styles/nganimate";
+
+html {
+	height:100%;
+}
+
+body {
+	background:#252525;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:100;
+	font-size:16px;
+	height:100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+//global styles ------------------------------
+.clear {
+	clear:both;
+}
