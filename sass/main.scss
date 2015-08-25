@@ -2,16 +2,16 @@
 @import url('../bootstrap/bootstrap.css');
 @import url('../fontcustom/fontcustom.css');
 
-//styles
+//shared styles
 @import "compass/css3";
 @import "styles/colour";
-@import "styles/preloader";
 @import "styles/fonts";
 @import "styles/buttons";
-@import "styles/input";
 @import "styles/mixin";
-@import "styles/navigation";
 @import "styles/nganimate";
+
+//application components
+@import "app/components/home/homeStyle";
 
 html {
 	height:100%;

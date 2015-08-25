@@ -20,12 +20,10 @@
     //setup a namespace
     utils.namespace('APP');
 
-    APP = angular.module('myApp',[route,animate]);
-    APP.api = 'http://localhost:8080';
-
+    APP = angular.module('myApp',[route,animate,cookies]);
+   
     //require modules
-    var controllers  = require('./modules/Controller'),
-        router       = require('./modules/Router'),
-        directive    = require('./modules/Directive');
+    require('./app.bootstrap');
+    require('./app.router');
 
 }());
