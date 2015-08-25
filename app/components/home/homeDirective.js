@@ -1,18 +1,17 @@
 (function(){
 
 	//Select button ----------------------------------------------------
-	APP.directive('preloaderBars', function(){
+	APP.directive('homeDirective', function(){
 
 		return {
 	    	restrict: 'AE',
 	    	replace: 'true',
-			templateUrl: '/templates/directives/preloader-bars.html',
+			templateUrl: 'homeDirective.html',
 			scope: {
-				data:'@'
+				data:'='
 			},
 
 			link: function(scope, element, attrs) {
-
 
 
 			}

@@ -1,9 +1,9 @@
 (function(){
 
-	APP.controller('welcomeController', ['$rootScope','$scope', '$routeParams','$http','$location', function($rootScope, $scope, $routeParams, $http, $location){
+	APP.controller('websiteController', ['$rootScope','$scope', '$routeParams','$http','$location', function($rootScope, $scope, $routeParams, $http, $location){
 
 		//scope ----------------
-		$scope.welcome = {
+		$scope.website = {
 
 		};
 
