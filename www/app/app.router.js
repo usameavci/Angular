@@ -4,7 +4,7 @@
     APP.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
         //servers
-        $routeProvider.when('/', { templateUrl: 'templates/welcome.html', controller: 'welcomeController'});
+        $routeProvider.when('/', { templateUrl: '/app/components/home/homeView.html', controller: 'homeController', controllerAs: 'home'});
 
         $locationProvider.html5Mode(true);
 	}]);

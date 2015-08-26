@@ -17,6 +17,8 @@
         animate = require('angular-animate');
 
     window.APP = {};
+
+    APP.COMPONENTS = '/app/components';
     
     APP = angular.module('myApp',[route,animate,cookies]);
    

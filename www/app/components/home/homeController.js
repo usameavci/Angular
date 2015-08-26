@@ -1,11 +1,8 @@
 (function(){
 
-	APP.controller('homeController', ['$rootScope','$scope', '$routeParams','$http','$location', function($rootScope, $scope, $routeParams, $http, $location){
+	APP.controller('homeController', [function(){
 
-		//scope ----------------
-		$scope.home = {
-
-		};
+		this.test = "Hello World!";
 
     }]);
 
