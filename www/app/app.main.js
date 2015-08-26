@@ -11,15 +11,13 @@
 (function(){
 
     //require dependancies
- 	var utils   = require('./modules/Utils'),
-        angular = require('angular'),
+ 	var angular = require('angular'),
         cookies = require('angular-cookies'),
         route   = require('angular-route'),
         animate = require('angular-animate');
 
-    //setup a namespace
-    utils.namespace('APP');
-
+    window.APP = {};
+    
     APP = angular.module('myApp',[route,animate,cookies]);
    
     //require modules

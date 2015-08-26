@@ -28,7 +28,7 @@
 
 	//JShint -------------------------------------------------------------------- +
 	gulp.task('jshint', function () {
-		gulp.src(['app/**/*.js'])
+		gulp.src(['www/app/*.js','www/app/components/**/*.js'])
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'))
 	  	.pipe(jshint.reporter('fail'))
@@ -42,55 +42,56 @@
 	gulp.task('browserify', function () {
 
 		  var b = browserify();
-		  b.add("./app/App.js");
+		  b.add("./www/app/app.main.js");
 
 		  return b.bundle()
 		    .on('error', function(err){
 		      console.log(err.message);
 		      this.emit('end');
 		    })
-		    .pipe(source('App.min.js'))
+		    .pipe(source('app.min.js'))
 			.pipe(buffer())
     		.pipe(uglify())
-		    .pipe(gulp.dest('./www/static/js/'))
+		    .pipe(gulp.dest('./www/assets/js/'))
 			.pipe(browserSync.reload({stream: true}));
 	});
 
 
 	//Concat scripts ----------------------------------------------------------- +
 	gulp.task('scripts', function() {
-	  return gulp.src('./lib/*.js')
+	  return gulp.src('./www/app/vendor/*.js')
 	    .pipe(concat('lib.js'))
-	    .pipe(gulp.dest('./www/static/js/'));
+	    .pipe(gulp.dest('./www/assets/js/'));
 	});
 
 
 	//SASS ---------------------------------------------------------------------- +
 	gulp.task('sass', function() {
-		gulp.src('./sass/*.scss')
+		gulp.src('www/app/sass/*.scss')
     	.pipe(compass({
-      		config_file: './config.rb',
-      		css: './www/static/css',
+      		config_file: 'config.rb',
+      		css: 'www/assets/css',
       		sass: 'sass'
 		}))
-    	.pipe(gulp.dest('./www/static/css'))
+    	.pipe(gulp.dest('www/assets/css'))
 		.pipe(browserSync.reload({stream: true}));
 	});
 
 
 	//CSS minify ---------------------------------------------------------------- +
 	gulp.task('minify-css', function() {
-	  return gulp.src('www/static/css/*.css')
+	  return gulp.src('www/assets/css/*.css')
 	    .pipe(minifyCss({compatibility: 'ie8'}))
-	    .pipe(gulp.dest('www/static/css/'));
+	    .pipe(gulp.dest('www/assets/css/'));
 	});
 
 
 	//Watcher ------------------------------------------------------------------- +
 	gulp.task('watch', function() {
-		gulp.watch('app/**/*.js', ['jshint','browserify','scripts']);
-		gulp.watch('sass/**/*.scss', ['sass']);
-		gulp.watch(["www/*.html","www/templates/*.html"]).on('change',  browserSync.reload);
+		gulp.watch('./www/app/*.js', ['jshint','browserify','scripts']);
+		gulp.watch('./www/app/components/**/*.*', ['jshint','browserify','scripts']);
+		gulp.watch('./www/app/sass/**/*.scss', ['sass']);
+		gulp.watch(["./www/app/components/**/*.html"]).on('change',  browserSync.reload);
 	});
 
 

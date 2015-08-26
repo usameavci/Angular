@@ -4,14 +4,14 @@
 
 //shared styles
 @import "compass/css3";
-@import "styles/colour";
-@import "styles/fonts";
-@import "styles/buttons";
-@import "styles/mixin";
-@import "styles/nganimate";
+@import "core/colour";
+@import "core/fonts";
+@import "core/buttons";
+@import "core/mixin";
+@import "core/nganimate";
 
 //application components
-@import "app/components/home/homeStyle";
+@import "../components/home/homeStyle";
 
 html {
 	height:100%;
@@ -25,9 +25,4 @@ body {
 	height:100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-//global styles ------------------------------
-.clear {
-	clear:both;
 }
