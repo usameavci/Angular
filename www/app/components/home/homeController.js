@@ -2,8 +2,13 @@
 
 	APP.controller('homeController', [function(){
 
-		this.test = "Hello World!";
+		this.test = "updated!?";
+
+		this.getUsers = function(q){
+			return q;
+		};
 
     }]);
 
 }());
+ 

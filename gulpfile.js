@@ -13,7 +13,8 @@
 		buffer 			= require('vinyl-buffer'),
 		minifyCss 		= require('gulp-minify-css'),
 		compass 		= require('gulp-compass'),
-		browserSync 	= require('browser-sync').create();
+		browserSync 	= require('browser-sync').create(),
+		karma 			= require('gulp-karma');
 
 
 	//browserSync --------------------------------------------------------------- +
@@ -86,14 +87,29 @@
 	});
 
 
-	//Watcher ------------------------------------------------------------------- +
-	gulp.task('watch', function() {
-		gulp.watch('./www/app/*.js', ['jshint','browserify','scripts']);
-		gulp.watch('./www/app/components/**/*.*', ['jshint','browserify','scripts']);
-		gulp.watch('./www/app/sass/**/*.scss', ['sass']);
-		gulp.watch(["./www/app/components/**/*.html"]).on('change',  browserSync.reload);
+	//Unit & Integration testing ------------------------------------------------- +
+	gulp.task('test', function() {
+	  return gulp.src('./foobar') // NOTE: Using the fake './foobar' so as to run the files
+	    .pipe(karma({
+	      configFile: 'karma.conf.js',
+	      action: 'watch',
+	      singleRun: false
+	    }))
+	    .on('error', function(err) {
+	      console.log(err);
+	      this.emit('end');
+	    });
 	});
 
+
+	//Watcher ------------------------------------------------------------------- +
+	gulp.task('watch', function() {
+		gulp.watch('./www/app/*.js', ['jshint','browserify']);
+		gulp.watch('./www/app/components/**/*.*', ['jshint','browserify']);
+		gulp.watch('./www/app/sass/**/*.scss', ['sass']);
+		gulp.watch(["./www/app/components/**/*.html"]).on('change',  browserSync.reload);
+		gulp.watch('./www/app/vendor/*.js', ['scripts']);
+	});
 
 	//default tasks ------------------------------------------------------------ +
 	gulp.task('default', ['browser-sync','watch']);

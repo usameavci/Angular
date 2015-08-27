@@ -7,9 +7,9 @@
  *
  * @author Luke Freeman
  */
-
+ 
 (function(){
-
+ 
     //require dependancies
  	var angular = require('angular'),
         cookies = require('angular-cookies'),
@@ -21,6 +21,10 @@
     APP.COMPONENTS = '/app/components';
     
     APP = angular.module('myApp',[route,animate,cookies]);
+
+    angular.module('helloworld',[]).factory('randomNumber', [function(){
+        return Math.random();
+    }]);
    
     //require modules
     require('./app.bootstrap');
