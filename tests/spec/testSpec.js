@@ -2,7 +2,7 @@
 //Unit test homeController ------------------------------------------------------- +
 describe("homeController", function() {
 
-  beforeEach(module('myApp'));
+  beforeEach(module('home'));
   var $controller, controller, res;
 
   beforeEach(inject(function(_$controller_){

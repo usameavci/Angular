@@ -88,7 +88,7 @@
 
 
 	//Unit & Integration testing ------------------------------------------------- +
-	gulp.task('test', function() {
+	gulp.task('karma', function() {
 	  return gulp.src('./foobar') // NOTE: Using the fake './foobar' so as to run the files
 	    .pipe(karma({
 	      configFile: 'karma.conf.js',

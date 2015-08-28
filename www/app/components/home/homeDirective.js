@@ -1,7 +1,7 @@
 (function(){
 
 	//Select button ----------------------------------------------------
-	APP.directive('homeDirective', function(){
+	angular.module('home').directive('homeDirective', function(){
 
 		return {
 	    	restrict: 'AE',
