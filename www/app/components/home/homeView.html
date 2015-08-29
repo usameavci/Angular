@@ -1,3 +1,5 @@
 <div>
-{{home.test}}
+<h3>{{home.msg | uppercase}}</h3>
+<input type="text" ng-model="home.msg" />
+<div data-home-directive msg="home.msg"></div>
 </div>

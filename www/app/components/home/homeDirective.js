@@ -1,21 +1,19 @@
 (function(){
 
+	'use strict';
+
 	//Select button ----------------------------------------------------
 	angular.module('home').directive('homeDirective', function(){
 
 		return {
-	    	restrict: 'AE',
+	    	restrict: 'EA',
 	    	replace: 'true',
-			templateUrl: 'homeDirective.html',
-			scope: {
-				data:'='
-			},
-
-			link: function(scope, element, attrs) {
-
-
+			templateUrl: 'app/components/home/homeDirective.html',
+			controller: 'homeController',
+			controllerAs: 'home',
+			bindToController: {
+				msg: '='
 			}
-
 	  	};
 
 	});

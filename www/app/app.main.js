@@ -9,6 +9,8 @@
  */
  
 (function(){
+
+    'use strict';
  
     //require core modules
  	var angular = require('angular'),

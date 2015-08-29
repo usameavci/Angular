@@ -29,7 +29,7 @@
 
 	//JShint -------------------------------------------------------------------- +
 	gulp.task('jshint', function () {
-		gulp.src(['www/app/*.js','www/app/components/**/*.js'])
+		gulp.src(['www/app/*.js','www/app/components/**/*.js','www/app/shared/**/*.js'])
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'))
 	  	.pipe(jshint.reporter('fail'))
@@ -44,7 +44,7 @@
 
 		  var b = browserify();
 		  b.add("./www/app/app.main.js");
-
+		 
 		  return b.bundle()
 		    .on('error', function(err){
 		      console.log(err.message);
@@ -52,7 +52,7 @@
 		    })
 		    .pipe(source('app.min.js'))
 			.pipe(buffer())
-    		.pipe(uglify())
+    		//.pipe(uglify())
 		    .pipe(gulp.dest('./www/assets/js/'))
 			.pipe(browserSync.reload({stream: true}));
 	});
@@ -106,6 +106,7 @@
 	gulp.task('watch', function() {
 		gulp.watch('./www/app/*.js', ['jshint','browserify']);
 		gulp.watch('./www/app/components/**/*.*', ['jshint','browserify']);
+		gulp.watch('./www/app/shared/**/*.*', ['jshint','browserify']);
 		gulp.watch('./www/app/sass/**/*.scss', ['sass']);
 		gulp.watch(["./www/app/components/**/*.html"]).on('change',  browserSync.reload);
 		gulp.watch('./www/app/vendor/*.js', ['scripts']);

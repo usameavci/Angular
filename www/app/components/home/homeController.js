@@ -1,8 +1,10 @@
 (function(){
 
+	'use strict';
+
 	angular.module('home').controller('homeController', [function(){
 
-		this.test = "updated!? :)";
+		this.msg = "updated!? :)";
 
 		this.getUsers = function(q){
 			return q;

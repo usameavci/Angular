@@ -1,5 +1,7 @@
 (function(){
 
+	'use strict';
+
 	angular.module('home').factory('randomNumber', function(){
 		
 		function Private(val){
