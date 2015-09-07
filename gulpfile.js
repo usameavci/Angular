@@ -13,9 +13,10 @@
 		buffer 			= require('vinyl-buffer'),
 		minifyCss 		= require('gulp-minify-css'),
 		compass 		= require('gulp-compass'),
+		babel 			= require("gulp-babel"),
+		babelify 		= require("babelify"),
 		browserSync 	= require('browser-sync').create(),
 		karma 			= require('gulp-karma');
-
 
 	//browserSync --------------------------------------------------------------- +
 	gulp.task('browser-sync', function() {
@@ -44,6 +45,7 @@
 
 		  var b = browserify();
 		  b.add("./www/app/app.main.js");
+		  b.transform(babelify);
 		 
 		  return b.bundle()
 		    .on('error', function(err){
