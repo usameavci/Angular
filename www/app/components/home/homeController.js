@@ -2,13 +2,16 @@
 
 	'use strict';
 
-	angular.module('home').controller('homeController', [function(){
+	angular.module('home').controller('homeController', ['$resource', function($resource){
 
-		this.msg = "updated!? :)";
-
-		this.getUsers = function(q){
-			return q;
-		};
+		var res = $resource('http://localhost:8080');
+		res.get({},function(r){
+			r.msg = 'sentback';
+			r.$save(function(r,re){
+				console.log(r);
+			});	
+		});
+		
 
     }]);
 

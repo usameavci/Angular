@@ -74,10 +74,13 @@
     	.pipe(compass({
       		config_file: 'config.rb',
       		css: 'www/assets/css',
-      		sass: 'sass'
+      		sass: 'www/app/sass'
 		}))
     	.pipe(gulp.dest('www/assets/css'))
 		.pipe(browserSync.reload({stream: true}));
+	}).on('error', function(err) {
+	      console.log(err);
+	      this.emit('end');
 	});
 
 

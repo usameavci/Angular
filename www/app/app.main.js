@@ -8,7 +8,7 @@
  * @author Luke Freeman
  */
  
-(function(){
+(function(){ 
 
     'use strict';
  
@@ -16,13 +16,14 @@
  	var angular = require('angular'),
         cookies = require('angular-cookies'),
         route   = require('angular-route'),
-        animate = require('angular-animate');
+        animate = require('angular-animate'),
+        ngresource = require('angular-resource');
 
     //bootstrap controllers, factories, directives...
     require('./app.bootstrap');
 
     //main module
-    angular.module('myApp',[route,animate,cookies,'home']);
+    angular.module('myApp',[route,animate,cookies,'ngResource','home']);
 
     //create application routing
     require('./app.router');
